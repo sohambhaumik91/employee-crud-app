@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "styles/style.css" />
+    </head>
+    <body>
+    <div id="app-root">
+        <header class="app-header">ABC Bank</header>
+        <div id="table-container">
+            <div class="container">
+                <table class="table table-dark table-striped">
+                    <thead id="table-header">
+                        <tr>
+                            <th data-filter-value="id" data-query-set="false">
+                                <span>ID</span>
+                                <input class="search-field" type="text" data-search="id"/>
+                            </th>
+                            <th data-filter-value="preferredFullName" data-query-set="false">
+                                <span>Full Name</span>
+                                <input class="search-field" type="text" data-search="preferredFullName"/>
+                            </th>
+                            <th data-filter-value="employeeCode" data-query-set="false">
+                                <span>Employee Code</span>
+                                <input class="search-field" type="text" data-search="employeeCode"/>
+                            </th>
+                            <th data-filter-value="jobTitleName" data-query-set="false">
+                                <span>Job Title</span>
+                                <input class="search-field" type="text" data-search="jobTitleName"/>
+                            </th>
+                            <th data-filter-value="phoneNumber" data-query-set="false">
+                                <span>phone number</span>
+                                <input class="search-field" type="text" data-search="phoneNumber"/>
+                            </th>
+                            <th data-filter-value="emailAddress" data-query-set="false">
+                                <span>Email ID</span>
+                                <input class="search-field" type="text" data-search="emailAddress"/>
+                            </th>
+                            <th data-filter-value="region" data-query-set="false">
+                                <span>Region</span>
+                                <input class="search-field" type="text" data-search="region"/>
+                            </th>
+                            <th data-filter-value="dob" data-query-set="false">
+                                <span>DOB</span>
+                                <input class="search-field" type="text" data-search="dob"/>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                    </tbody>
+            </table>
+            <div id="pagination-button"></div>
+            </div>
+            
+        </div>
+    </div>
+    <script type="module" src="src/app.js"></script>
+    </body>
+</html>

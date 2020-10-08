@@ -1,0 +1,58 @@
+table {
+    border-collapse: collapse;
+    border: 1px solid #dfdfdf;
+    width: 100%;
+    font-size: 90%;
+    border-top: none;
+    width: 100%;
+    min-height: 200px;
+}
+table tr:nth-child(2n) {
+    background: #F7F7F7;
+}
+table tr td:first-child {
+    text-align: left;
+}
+table td, table th {
+    padding: 10px;
+}
+table th {
+    text-align: left;
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+    border: 1px solid #fff;
+    background-color: #e5e5e5;
+}
+.container {
+    width: 75%;
+    margin:120px auto;
+}
+.app-header {
+    background-color: black;
+    color: white;
+    position: fixed;
+    width:100%;
+    top:0 ;
+    left: 0;
+    padding: 20px;
+}
+input[type="text"] {
+    display: block;
+}
+#pagination-button {
+    margin-top: 24px;
+}
+button:not(:first-child) {
+    margin-left: 8px;
+}
+button {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: none;
+}
+button > span {
+    padding: 4px;
+    display: inline-block;
+}
