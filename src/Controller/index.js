@@ -8,25 +8,31 @@ class CrudFacade {
 
     }
 
-    tryToReturn(func) {
+    tryToReturn(func, action) {
         const result = func.call(this);
-        return result.then((data) => {
-            if(data.ok) {
-                return data.json();
-            } else {
-                return Promise.reject(new Error('error'));
-            }
-        }).catch(e => Promise.reject('e'));
+        if(result.then) {
+            return result.then((data) => {
+                if(data.ok) {
+                    return data.json();
+                } else {
+                    return Promise.reject(new Error('error'));
+                }
+            }).catch(e => Promise.reject(e.message));
+        } else {
+            return Promise.resolve([result]);
+        }
+        
     }
 
     employees() {
         this.employeeInterface = new EmployeeModule();
-        Object.freeze(this.employeeInterface);
+        // Object.freeze(this.employeeInterface);
         return {
             fetch: this.employeeInterface.getEmployees,
             update: this.employeeInterface.updateEmployeeData,
             delete:  this.employeeInterface.deleteEmployee,
-            create: this.employeeInterface.createEmployee
+            create: this.employeeInterface.createEmployee,
+            getLastId: this.employeeInterface.getLastEmpId,
         }
     }
 
@@ -44,6 +50,16 @@ class CrudFacade {
         switch(this.type) {
             case 'EMPLOYEE': {
                 return this.tryToReturn(this.employees().fetch);
+            }
+            default: {
+                return Promise.reject('Some error');
+            }
+        }
+    }
+    save(data) {
+        switch(this.type) {
+            case 'EMPLOYEE': {
+                return this.employeeInterface.employeeData = data;
             }
             default: {
                 return Promise.reject('Some error');

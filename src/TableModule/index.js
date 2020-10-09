@@ -8,7 +8,6 @@ class TableModule {
         this.rows = 2;
         this.filters = {};
     }
-    
     setTableData(data) {
         this.tableData = data;
     }
@@ -85,7 +84,6 @@ class TableModule {
         });
         this.setTableData(sortedArray);
     }
-
     pageButtons(pages) {
         wrapper.innerHTML = '';
         
@@ -116,6 +114,9 @@ class TableModule {
                     <td>${item.emailAddress}</td>
                     <td>${item.region}</td>
                     <td>${item.dob}</td>
+                    <td><button class="options-btn" data-id=${item.id}>options
+                        <options-modal empid=${item.id}></options-modal>
+                    </button></td>
                 </tr>`
             )
         }).join('')}`);

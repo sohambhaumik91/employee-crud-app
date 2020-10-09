@@ -1,12 +1,21 @@
 <html>
     <head>
         <link rel = "stylesheet" type = "text/css" href = "styles/style.css" />
+        <script type="module" src="src/components/ModalComponent.js"></script>
+        <script type="module" src="src/components/OptionsModal.js"></script>
     </head>
     <body>
     <div id="app-root">
         <header class="app-header">ABC Bank</header>
         <div id="table-container">
             <div class="container">
+                
+                <x-modal title="Create Employee">
+                </x-modal>
+                <div class="header-section">
+                    <h1>Employees</h1>
+                    <button class="create-employee" id="create-employee">Create Employee</button>
+                </div>
                 <table class="table table-dark table-striped">
                     <thead id="table-header">
                         <tr>
@@ -42,6 +51,7 @@
                                 <span>DOB</span>
                                 <input class="search-field" type="text" data-search="dob"/>
                             </th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody id="table-body">

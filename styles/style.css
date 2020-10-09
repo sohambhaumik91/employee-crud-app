@@ -25,7 +25,7 @@ table th {
     background-color: #e5e5e5;
 }
 .container {
-    width: 75%;
+    width: 90%;
     margin:120px auto;
 }
 .app-header {
@@ -56,3 +56,36 @@ button > span {
     padding: 4px;
     display: inline-block;
 }
+.header-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.create-employee {
+    margin-left: auto !important;
+    padding:6px;
+    border-radius: 4px;
+}
+.form-row {
+    display: flex;
+    padding: 12px 0;
+}
+.form-row > div{
+    flex: 1;
+    padding: 0 8px; 
+
+}
+.form-row > div input  {
+    width: 100%;
+    margin-top: 6px;
+    padding:6px;
+}
+.options-btn {
+    position: relative;
+    padding: 6px;
+    border-radius: 4px;
+}
+.options-btn:focus {
+    outline:  none;
+}
+
